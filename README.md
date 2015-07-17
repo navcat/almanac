@@ -6,7 +6,9 @@
   * Almanac 这部分代码包含日历的绘画、更新、二十四节气、天干地支等信息的计算和显示
   * DateSelection 日历顶部右侧切换年、月所封装的操作函数
   * global 全局变量
+
   CSS文件中（almanac.css）包含了日历所需的CSS样式文件
+
   images文件夹中包含所需的图片文件
 
 ## 功能列表
@@ -20,6 +22,7 @@
 
 ## 使用方法
   1. 在页面中插入HTML
+  <pre>
 	 <div class="zh-almanac" id="id_almanac" data-id="2">
 	   <div class="hint-bar clearfix">
 	   <span class="title-bar" id="GZ">
@@ -92,13 +95,15 @@
 	   </div>
 	   </div>
 	 </div>
-
+   </pre>
   2. 在页面中引入CSS\JS相关文件
+  <pre>
 	<link href="./almanac/almanac.css" rel="stylesheet" type="text/css" />
 	<script src="./jquery.1.10.2.min.js"></script> 
 	<script src="./almanac/almanac.js"></script>
-
+  </pre>
   3. 使用如下代码进行调用
+   <pre>
 	$("#id_almanac").almanac({
 	  /**
 	   * 画日历之后调用函数
@@ -121,7 +126,7 @@
 		console.log('阳历：' + _this.attr('data-year') + '年' + _this.attr('data-month') + '月' + _this.attr('data-solor'));
 	  }
 	});
-
+  </pre>
 详细请参见index.html示例文件。
 
 ## Q/A
