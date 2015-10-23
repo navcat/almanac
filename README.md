@@ -134,7 +134,7 @@
   详细请参见index.html示例文件。
 
 ## Q/A
-  联系方式：dubspace@foxmail.com
+  联系方式：navcat@foxmail.com
 
 
 ## License
