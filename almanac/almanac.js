@@ -601,10 +601,8 @@
                     s = '初十';  break;
                 case  20:
                     s = '二十';  break;
-                    break;
                 case  30:
                     s = '三十';  break;
-                    break;
                 default  :
                     s = this.nStr2[Math.floor(d / 10)];
                     s += this.nStr1[d % 10];
