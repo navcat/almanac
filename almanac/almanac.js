@@ -525,17 +525,17 @@
             if (m == 3) _this[tmp1].color = 'red'; //清明颜色
 
             //国历节日
-            for (i in this.sFtv)
-                if (this.sFtv[i].match(/^(\d{2})(\d{2})([\s\*])(.+)$/))
+            for (i in this.sFtv){
+                if (jQuery.type(this.sFtv[i])=='string'&&this.sFtv[i].match(/^(\d{2})(\d{2})([\s\*])(.+)$/))
                     if (Number(RegExp.$1) == (m + 1)) {
                         _this[Number(RegExp.$2) - 1].solarFestival += RegExp.$4 + '  '
                         if (RegExp.$3 == '*')  _this[Number(RegExp.$2) - 1].color = 'red'
                     }
-
+            }
 
             //农历节日
-            for (i in this.lFtv)
-                if (this.lFtv[i].match(/^(\d{2})(.{2})([\s\*])(.+)$/)) {
+            for (i in this.lFtv){
+                if (jQuery.type(this.lFtv[i])=='string'&&this.lFtv[i].match(/^(\d{2})(.{2})([\s\*])(.+)$/)) {
                     tmp1 = Number(RegExp.$1) - firstLM
                     if (tmp1 == -11)  tmp1 = 1
                     if (tmp1 >= 0 && tmp1 < n) {
@@ -546,7 +546,7 @@
                         }
                     }
                 }
-
+            }
             //复活节只出现在3或4月
             if (m == 2 || m == 3) {
                 var estDay = this.easter(y);
@@ -601,10 +601,8 @@
                     s = '初十';  break;
                 case  20:
                     s = '二十';  break;
-                    break;
                 case  30:
                     s = '三十';  break;
-                    break;
                 default  :
                     s = this.nStr2[Math.floor(d / 10)];
                     s += this.nStr1[d % 10];
